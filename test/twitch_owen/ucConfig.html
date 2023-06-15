@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Configuration Page</title>
+    <meta charset="UTF-8" />
+    <!--import extension helper library -->
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <!--import jquery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="jQueryLocal.js" type="text/javascript"></script>
+
+    <script src="common.js" type="text/javascript"></script>
+
+    <!-- import config.js -->
+    <script src="ucConfig.js" type="text/javascript"></script>
+  </head>
+  <style>
+    .mybutton {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 16px;
+      gap: 10px;
+      width: 100px;
+      height: 36px;
+      background: #46bfe8;
+      border-radius: 4px;
+      border: 0;
+      color: white;
+    }
+    .mybutton:hover {
+      background: rgb(26, 128, 149);
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div
+      class="extension"
+      style="
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="width: 75%; padding: 0 0 20px 0">
+        <p
+          style="
+            width: 740px;
+            height: 22px;
+
+            /* Title 16px B */
+
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 140%;
+            /* or 22px */
+
+            color: #524f4f;
+          "
+        >
+          ① 登入Showmore點擊官網管理 → 一頁式官網
+        </p>
+        <div
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <img src="ucConfigImg.png" style="width: 429px; height: 242px" />
+        </div>
+
+        <p
+          style="
+            width: 458px;
+            height: 22px;
+
+            /* Title 16px B */
+
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 140%;
+            /* or 22px */
+
+            text-align: right;
+
+            color: #524f4f;
+          "
+        >
+          ② 複製官網ID至下方輸入框，儲存以連接Showmore一頁式官網
+        </p>
+        <form
+          id="form"
+          style="display: flex; flex-direction: column; width: 100%"
+        >
+          <div style="display: flex; align-items: center; flex-direction: row">
+            <p
+              for="storeId"
+              style="
+                /* width: 84px; */
+                height: 17px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                /* identical to box height */
+                margin: 8px 16px;
+                text-align: right;
+
+                color: #524f4f;
+              "
+            >
+              一頁式網站ID
+            </p>
+            <input
+              type="text"
+              id="storeId"
+              style="
+                width: 360px;
+                height: 36px;
+
+                background: #ffffff;
+                /* Black / 300 */
+
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+              "
+            />
+            <div
+              id="hint"
+              style="margin: 0 12px; display: none; align-items: center"
+            >
+              <img
+                src="./check.svg"
+                style="width: 16px; height: 16px; margin: 0 4px"
+              />
+              <p
+                style="
+                  font-family: 'Inter';
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 14px;
+                  line-height: 17px;
+                  /* identical to box height */
+
+                  text-align: right;
+
+                  color: #79b962;
+                "
+              >
+                更新成功
+              </p>
+            </div>
+          </div>
+          <div
+            style="
+              width: 100%;
+              height: 0;
+              border: 1px solid #e0e0e0;
+              margin: 16px 0;
+            "
+          ></div>
+          <div
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <button class="mybutton" id="myButton" type="submit">送出</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

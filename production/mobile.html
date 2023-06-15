@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Viewer Page</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+      * {
+        box-sizing: content-box;
+      }
+      .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
+      }
+      .price {
+        font-size: 16px;
+        font-weight: 700;
+        color: #f15555 !important;
+      }
+
+      .container {
+        width: 68px;
+        height: 68px;
+        position: relative;
+        margin-left: 8px;
+      }
+
+      .left {
+        background-size: cover;
+        background-position: center;
+        /* background-color: red; */
+        width: 68px;
+        height: 68px;
+        position: absolute;
+        transform-origin: center center -34px;
+        transform: rotateY(0deg);
+        z-index: 1;
+        border-radius: 4px;
+      }
+      .left-move-left {
+        animation-name: left-animation;
+        animation-duration: 0.75s;
+      }
+
+      .right {
+        background-size: cover;
+        background-position: center;
+
+        /* background-color: blueviolet; */
+        width: 68px;
+        height: 68px;
+        position: absolute;
+        transform-origin: center center -34px;
+        transform: rotateY(90deg);
+        z-index: 0;
+        border-radius: 4px;
+      }
+      .right-move-left {
+        animation-name: right-animation;
+        animation-duration: 0.75s;
+      }
+      .logoImg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        animation: imgFade 7s infinite linear;
+      }
+      .storeName {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        animation: storeNameFade 7s infinite linear;
+        color: #000;
+      }
+
+      @keyframes left-animation {
+        0% {
+          border-radius: 4px;
+          transform: rotateY(0);
+          z-index: 1;
+        }
+        100% {
+          border-radius: 4px;
+          transform: rotateY(-90deg);
+          z-index: 0;
+        }
+      }
+      @keyframes right-animation {
+        0% {
+          border-radius: 4px;
+          transform: rotateY(90deg);
+          z-index: 0;
+        }
+        100% {
+          border-radius: 4px;
+          transform: rotateY(0);
+          z-index: 1;
+        }
+      }
+
+      @keyframes imgFade {
+        0% {
+          opacity: 1;
+        }
+        10% {
+          opacity: 1;
+        }
+        20% {
+          opacity: 1;
+        }
+        30% {
+          opacity: 0.3;
+        }
+        40% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        60% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 0;
+        }
+        80% {
+          opacity: 0.8;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes storeNameFade {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 0.8;
+        }
+        40% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0.3;
+        }
+        90% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      description {
+        margin-top: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+    "
+  >
+    <div id="body">
+      <header
+        id="nav"
+        style="
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          width: 100%;
+          height: 56px;
+          display: flex;
+          z-index: 10;
+        "
+      >
+        <a style="margin: 0 auto; position: relative" id="storeLink">
+          <img
+            class="logoImg"
+            style="height: 44px; position: absolute"
+            id="logo"
+          />
+          <p id="storeTitle" class="storeName" style="position: absolute"></p>
+        </a>
+      </header>
+      <main
+        id="main"
+        style="height: calc(100vh - 56px); overflow: scroll"
+      ></main>
+    </div>
+
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="mobile.min.js"></script>
+  </body>
+</html>
